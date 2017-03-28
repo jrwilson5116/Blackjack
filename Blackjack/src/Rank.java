@@ -9,6 +9,7 @@ public enum Rank {
 	//Private Fields
 	private final int rankValue;
 	private final String rankString;
+	
 	// Constructor 
 	private Rank(int rankValue, String rankString){
 		this.rankValue = rankValue;
@@ -22,5 +23,5 @@ public enum Rank {
 	public String printRank(){
 		return rankString;
 	}
-
+	
 }

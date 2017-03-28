@@ -30,7 +30,7 @@ public class Card {
 		if (isFaceUp){
 			str += rank.printRank() + " of " + suit.printSuit();
 		}else {
-			str = "Face Down (nothing to see here)";
+			str += "Face Down (nothing to see here)";
 		} 
 		return str;
 	}

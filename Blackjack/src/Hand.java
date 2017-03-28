@@ -45,21 +45,26 @@ public class Hand {
 		}
 	}
 		// Return total points of a hand
-		public int getTotal(){
-			int totalPts =0;
-			boolean hasAce = false;
-			// Getting total points Aces = 1
-			for (int i = 0; i < cards.size(); i++){
-				totalPts += cards.get(i).getRank();
-				//check to see if the card is an Ace
-				if (cards.get(i).printRank() == "Ace"){
-					hasAce = true;
+	public int getTotal(){
+		int totalPts =0;
+		boolean hasAce = false;
+		// Getting total points Aces = 1
+		for (int i = 0; i < cards.size(); i++){
+			totalPts += cards.get(i).getRank();
+			//check to see if the card is an Ace
+			if (cards.get(i).printRank() == "Ace"){
+				hasAce = true;
 				}
-				// Make Ace worth 11 if total points <= 11
-				if (hasAce && totalPts <= 11){
-					totalPts += 10; // Add 10 more to the Ace
-				}
+			// Make Ace worth 11 if total points <= 11
+			if (hasAce && totalPts <= 11){
+				totalPts += 10; // Add 10 more to the Ace
 			}
-			return totalPts;	
+			if (hasAce && totalPts > 21){
+				totalPts -= 10;
+			}
+		}
+		return totalPts;	
 	}
+	
+	
 }
